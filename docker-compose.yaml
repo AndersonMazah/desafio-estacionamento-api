@@ -1,0 +1,14 @@
+services:
+
+  estacionamento-api:
+    build:
+      context: ./src/estacionamento-api
+      dockerfile: Dockerfile
+    container_name: estacionamento-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+    ports:
+      - "5215:8080"
+    restart: unless-stopped
+
